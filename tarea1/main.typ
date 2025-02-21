@@ -34,9 +34,9 @@
   #line(length: 100%)
 
   == Demo:
-  + Usamos las propiedades métricas de $d$ para demostrar las mismas para $d'$: \ 1. $d(x, y) >= 0 sp forall x, y in X ==> d(x, y)/(1+d(x, y)) = d'(x, y) >= 0 sp forall x, y in X$. \ 2. $(d(x, y) = 0 <==> x = y sp forall x, y in X) ==> (d(x, y)/(1+d(x, y)) = d'(x, y) = 0 <==> x = y sp forall x, y in X)$. \ 3. $d'(x, y) = d(x, y)/(1+d(x, y)) = d(y, x)/(1+d(y, x)) = d'(y, x) sp forall x, y in X$. \ 4. soon tm
+  + Usamos las propiedades métricas de $d$ para demostrar las mismas para $d'$: \ 1. $d(x, y) >= 0 sp forall x, y in X ==> d(x, y)/(1+d(x, y)) = d'(x, y) >= 0 sp forall x, y in X$. \ 2. $(d(x, y) = 0 <==> x = y sp forall x, y in X) ==> (d(x, y)/(1+d(x, y)) = d'(x, y) = 0 <==> x = y sp forall x, y in X)$. \ 3. $d'(x, y) = d(x, y)/(1+d(x, y)) = d(y, x)/(1+d(y, x)) = d'(y, x) sp forall x, y in X$. \ 4. No me dio tiempo...
   + Al ser métrica, sabemos que $d'$ está acotada por abajo. Falta demostrar que está acotada por arriba. Suponga, por contradicción, que $d'(x, y) > 1$. Entonces $d(x, y)/(1+d(x, y)) > 1$, y como $d$ es no negativa, $d(x, y) > 1 + d(x, y)$. Lo cual es una contradicción. $contradiction$ \ $therefore d'$ es acotada.
-  + todo
+  + No me dio tiempo, mi idea era usar el corolario 1.10 para comparar las bases dadas por las bolas abiertas dependientes de cada métrica.
 
   *MEP*
 ]
@@ -84,9 +84,23 @@
 #prob[
   _Sea ${cal(T)_alpha}_(alpha in Lambda)$ una familia de topologías sobre X.
   Demuestre que existe una topología única más pequeña que contiene todas las
-  colecciones $cal(T)_alpha$, y una topología única más pequeña contenida en
+  colecciones $cal(T)_alpha$, y una topología única más grande contenida en
   todas las colecciones $cal(T)_alpha$._
 
+  == Demo:
+  Sea $topo := arbina topo_alpha$. Note que, por la definición de la
+  intersección, $topo subset.eq topo_beta sp forall beta in Lambda$. Además,
+  $topo$ es una topología, por el problema 2. Entonces $topo$ es una topología
+  que contiene todas las colecciones $topo_alpha$, falta demostrar que $topo$
+  es la colección más grande que cumple con ambas condiciones. Sea $topo'$ una
+  topología tal que $topo' subset.eq topo_beta sp forall beta in Lambda$. Pero
+  entonces $topo' subset.eq arbina topo_alpha = topo$.
+  $therefore topo$ es la topología más grande contenida en todas las colecciones
+  $topo_alpha$.
+
+  El otro lado no me dio tiempo, pero mi idea era utilizar $arbuna topo_alpha$
+  como base para una topología y argumentar que es la topología más pequeña que
+  contiene a $topo_alpha sp forall alpha in Lambda$.
 
   *MEP*
 ]
