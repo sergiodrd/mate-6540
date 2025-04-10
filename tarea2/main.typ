@@ -7,7 +7,7 @@
 #let due_time = "21 de marzo"
 #set enum(numbering: "a)")
 #set math.equation(numbering: "(1)", supplement: "la ecuación")
-#show: assignment_class.with(title, author, course_id, instructor, semester, 
+#show: assignment_class.with(title, author, course_id, instructor, semester,
   due_time)
 
 #let contradiction = text($refmark$, size: 1.75em)
@@ -16,8 +16,8 @@
 #let case = $cal(C)$
 #let arbuna = $limits(union.big)_(alpha in Lambda)$
 #let arbung = $limits(union.big)_(gamma in Lambda')$
-#let arbina = $limits(sect.big)_(alpha in Lambda)$
-#let arbing = $limits(sect.big)_(gamma in Lambda')$
+#let arbina = $limits(inter.big)_(alpha in Lambda)$
+#let arbing = $limits(inter.big)_(gamma in Lambda')$
 #let sp = $,space space$
 
 #prob[
@@ -32,6 +32,57 @@
   _(c) $f$ y $f^(-1)$ son funciones cerradas._
 
   == Demo:
+
+  #line(length: 100%)
+  $(a ==> b)$
+  #line(length: 100%)
+
+  Suponga que $f$ es un homeomorfismo, y sea $U in topo_X$, como $f$ es
+  biyectiva y un homeomorfismo, $f^(-1)$ es continua, entonces
+  $(f^(-1))^(-1)(U)=f(U) in topo_Y$.
+
+  $therefore f$ es función abierta.
+
+  Similarmente, sea $V in topo_X$, como $f$ es homeomorfismo, $f$ es continua,
+  entonces $f^(-1)(V)=(f^(-1))^(-1)(V) in topo_X$.
+
+  $therefore f^(-1)$ es función abierta.
+
+  #line(length: 100%)
+  $(b ==> c)$
+  #line(length: 100%)
+
+  Suponga que $f$ y $f^(-1)$ son funciones abiertas. Sea $C subset.eq X$ cerrado
+  y note que: $ f^(-1)(Y without f(C)) = f^(-1)(Y) without f^(-1)(f(C))
+  = X without C in topo_X text("(porque f es inyectiva)") $
+
+  Pero $f$ es función abierta, entonces:
+  $ f(f^(-1)(Y without f(C))) = Y without f(C) in topo_Y ==> f(C)
+  text("es cerrado") $
+  $therefore f$ es función cerrada.
+
+  Similarmente, sea $K subset.eq Y$ cerrado y note que:
+  $ f(X without f^(-1)(K)) &= (f^(-1))^(-1)(X without f^(-1)(K)) = (f^(-1))^(-1)
+  (X) without (f^(-1))^(-1)(f^(-1)(K)) \ &= f(X) without f(f^(-1)(K)) =
+  Y without K in topo_Y $
+  $==> f^(-1)(f(X without f^(-1)(K))) = X without f^(-1)(K) in topo_X ==>
+  f^(-1)(K)$ es cerrado
+
+  $therefore f^(-1)$ es función cerrada.
+
+  #line(length: 100%)
+  $(c ==> a)$
+  #line(length: 100%)
+
+  Suponga que $f$ y $f^(-1)$ son funciones cerradas, y sea $C_Y$ un conjunto
+  cerrado en $(Y, topo_Y)$, entonces $f^(-1)(C_Y)$ es cerrado en $(X, topo_X)
+  ==> f$ es continua.
+
+  Similarmente, suponga que $C_X$ es cerrado en
+  $(X, topo_X)$, entonces $(f^(-1))^(-1)(C_X) = f(C_X)$ es cerrado en
+  $Y ==> f^(-1)$ es continua.
+
+  $therefore f$ es un homeomorfismo.
 
   *MEP*
 ]
@@ -61,7 +112,7 @@
 #prob[
   _Sean $(X, topo_X)$ y $(Y, topo_Y)$ espacios topológicos. Demuestre que si
   $f: (X, topo_X) -> (Y, topo_Y)$ es sobreyectiva, continua, y abierta, entonces
-  $topo_Y = topo_"FIN"$, donde $topo_"FIN"$ es la topología final inducida por
+  $topo_Y = topo_"FIN"$, donde $space topo_"FIN" space$ es la topología final inducida por
   $f$._
 
   == Demo:
