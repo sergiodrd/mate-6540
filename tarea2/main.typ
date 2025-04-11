@@ -20,6 +20,7 @@
 #let arbing = $limits(inter.big)_(gamma in Lambda')$
 #let sp = $,space space$
 
+// problema 1
 #prob[
   _Sean $(X, topo_X)$ y $(Y, topo_Y)$ espacios topológicos y sea
   $f: (X, topo_X) -> (Y, topo_Y)$ una biyección. Demuestre que las siguientes
@@ -87,6 +88,7 @@
   *MEP*
 ]
 
+// problema 2
 #prob[
   _Sean $(X, topo_X)$ y $(Y, topo_Y)$ espacios topológicos. Una función
   $f: (X, topo_X) -> (Y, topo_Y)$ es fuertemente continua si
@@ -95,9 +97,33 @@
 
   == Demo:
 
+  #line(length: 100%)
+  $(==>)$
+  #line(length: 100%)
+
+  Suponga que $f$ es fuertemente continua y tome $B subset.eq Y$. Entonces:
+  $ &B subset.eq Y  ==> f^(-1)(B) &&subset.eq X \
+  ==> &f(overline(f^(-1)(B))) &&subset.eq f(f^(-1)(B)) &&"(continuidad fuerte)" \
+  ==> &f^(-1)(f(overline(f^(-1)(B)))) &&subset.eq f^(-1)(f(f^(-1)(B)))
+  &&"(TMA A.4 (ii))" $
+
+  Por otro lado:
+  $ &f(f^(-1)(B)) &&subset.eq B &&"(TMA A.4 (vii))" \
+  ==> &f^(-1)(f(f^(-1)(B))) &&subset.eq f^(-1)(B) &&"(TMA A.4 (ii))" $
+
+  Adicionalmente:
+  $ overline(f^(-1)(B)) subset.eq f^(-1)(f(overline(f^(-1)(B))))
+  "(TMA A.4 (viii))" $
+
+  Entonces, por la transitividad de las inclusiones $(6) subset.eq (4)
+  subset.eq (5)$, tenemos que $overline(f^(-1)(B)) subset.eq f^(-1)(B)$.
+
+  $therefore f^(-1)(B)$ es cerrado.
+
   *MEP*
 ]
 
+// problema 3
 #prob[
   _Sean $(X, topo_X)$ y $(Y, topo_Y)$ espacios topológicos y $cal(U)$ la
   topología producto sobre $X times X$. Demuestre que $(X, topo_X)$ es Hausdorff
@@ -106,9 +132,57 @@
 
   == Demo:
 
+  Dado $z in X$, denotaremos como $U_z$ a una vecindad de $z$.
+
+  #line(length: 100%)
+  $(==>)$
+  #line(length: 100%)
+
+  Dados $x, y in X$ con $x != y$, defina $H_(x, y) := { U_x times U_y |
+  U_x inter U_y = nothing }$. Note que $(X, topo_X)$ Hausdorff $==> H_(x, y)
+  != nothing sp forall x, y in X$ con $x != y$. Considere la familia
+  ${H_(x, y)}_((x, y) in Lambda)$ donde \ $Lambda := X times X without Delta$.
+  Por el axioma del escogido, existe una función de selección:
+  $ c:&{H_(x, y)}_((x, y) in Lambda) -> union.big_((x, y) in Lambda) H_(x, y) \
+  &c(A) in A sp forall A in {H_(x, y)}_((x, y) in Lambda) $
+  Ahora, sea $ B := union.big_((x, y) in Lambda) c(H_(x, y)) $
+  Note que $c(H_(x, y)) in H_(x, y) ==> exists x', y' in X$ tal que $c(H_(x, y))
+  = U_x' times U_y'$. Entonces $B$ es unión arbitraria de elementos básicos de
+  $cal(U) ==> B in cal(U)$.
+
+  Afirmamos que $B = X times X without Delta$:
+
+  Tome $(a, b) in B$. Entonces $exists (a', b') in Lambda$ tal que $(a, b) in
+  U_a' times U_b'$, pero $(a', b') in Lambda$ \ $==> U_a' inter U_b' = nothing
+  ==> a != b ==> (a, b) in X times X without Delta ==> B subset.eq X times X
+  without Delta$.
+
+  Ahora tome $(c, d) in X times X without Delta$, entonces $c != d ==> U_c, U_d$
+  con $U_c inter U_d = nothing$, pero \ $(c, d) in U_c times U_d subset.eq B
+  ==> (c, d) in B ==> X times X without Delta subset.eq B$.
+
+  $therefore B = X times X without Delta$
+
+  Entonces, $X times X without Delta = B in cal(U) ==> Delta$ es cerrado en
+  $cal(U)$.
+
+  #line(length: 100%)
+  $(<==)$
+  #line(length: 100%)
+
+  Suponga que $Delta$ es cerrado, entonces $X times X without Delta in cal(U)$.
+  Tome $(x, y) in X times X without Delta$. \ Como $X times X without Delta$ es
+  abierto, existe un elemento básico $U times V$ tal que \ $(x, y) in U times V
+  subset.eq X times X without Delta ==> U inter V = nothing$. Entonces
+  encontramos abiertos disjuntos que contienen a dos puntos arbitrarios
+  distintos.
+
+  $therefore X$ es Hausdorff.
+
   *MEP*
 ]
 
+// problema 4
 #prob[
   _Sean $(X, topo_X)$ y $(Y, topo_Y)$ espacios topológicos. Demuestre que si
   $f: (X, topo_X) -> (Y, topo_Y)$ es sobreyectiva, continua, y abierta, entonces
@@ -117,9 +191,24 @@
 
   == Demo:
 
+  Por definición, $T_"FIN"$ es la topología más grande que hace que $f$ sea
+  continua. Pero: \ $f:(X, topo_X) -> (Y, topo_Y)$ es continua por hipótesis.
+
+  $therefore topo_Y subset.eq topo_"FIN"$
+
+  Tome $V in topo_"FIN"$. Como $f$ es continua, $f^(-1)(V) in topo_X$. Pero
+  $f:(X, topo_X) -> (Y, topo_Y)$ también es abierta, lo que implica que
+  $f(f^(-1)(V)) in topo_Y$. Finalmente, $f$ sobreyectiva $==> f(f^(-1)(V)) = V$.
+  Entonces $V in topo_Y$.
+
+  $therefore topo_"FIN" subset.eq topo_Y$
+
+  $therefore topo_Y = topo_"FIN"$
+
   *MEP*
 ]
 
+// problema 5
 #prob[
   _Sea $p: (X, topo_X) -> (Y, topo_Y)$ una función continua. Demuestre que si
   existe una función continua $f: (Y, topo_Y) -> (X, topo_X)$ tal que
