@@ -4,7 +4,7 @@
 #let course_id = "MATE 6540"
 #let instructor = "Iván Cardona"
 #let semester = "C41"
-#let due_time = "21 de marzo"
+#let due_time = "11 de abril"
 #set enum(numbering: "a)")
 #set math.equation(numbering: "(1)", supplement: "la ecuación")
 #show: assignment_class.with(title, author, course_id, instructor, semester,
@@ -119,6 +119,21 @@
   subset.eq (5)$, tenemos que $overline(f^(-1)(B)) subset.eq f^(-1)(B)$.
 
   $therefore f^(-1)(B)$ es cerrado.
+
+  #line(length: 100%)
+  $(<==)$
+  #line(length: 100%)
+
+  Suponga que $f^(-1)(B)$ es cerrado $forall B subset.eq Y$, y tome $A subset.eq
+  X$. Entonces $f(A) subset.eq Y ==> f^(-1)(f(A))$ es cerrado por hipótesis.
+  Además, $A subset.eq f^(-1)(f(A))$ por el TMA A.4 (viii). Pero $overline(A)$
+  es el conjunto cerrado más pequeño que contiene a $A$, por lo tanto
+  $overline(A) subset.eq f^(-1)(f(A))$. Entonces:
+  $ &overline(A) &&subset.eq f^(-1)(f(A)) &&\
+  ==> &f(overline(A)) &&subset.eq f(f^(-1)(f(A))) &&"(TMA A.4 (i))" \
+  &&&subset.eq f(A) &&"(TMA A.4 (vii))" $
+
+  $therefore f$ es fuertemente continua.
 
   *MEP*
 ]
