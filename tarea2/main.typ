@@ -125,7 +125,7 @@
 
 // problema 3
 #prob[
-  _Sean $(X, topo_X)$ y $(Y, topo_Y)$ espacios topológicos y $cal(U)$ la
+  _Sea $(X, topo_X)$ un espacio topológico y $cal(U)$ la
   topología producto sobre $X times X$. Demuestre que $(X, topo_X)$ es Hausdorff
   $<==>$ la diagonal $Delta = {(x, y) in X times X | x = y}$ es un subconjunto
   cerrado de $(X times X, cal(U))$._
@@ -211,10 +211,9 @@
 // problema 5
 #prob[
   _Sea $p: (X, topo_X) -> (Y, topo_Y)$ una función continua. Demuestre que si
-  existe una función continua $f: (Y, topo_Y) -> (X, topo_X)$ tal que
+  existe una función continua \ $f: (Y, topo_Y) -> (X, topo_X)$ tal que
   $p compose f$ es la identidad en $Y$, entonces $p$ es una aplicación
   cociente._
-
   == Demo:
 
   *MEP*
