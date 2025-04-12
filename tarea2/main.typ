@@ -216,5 +216,27 @@
   cociente._
   == Demo:
 
+  Para demostrar que $p$ es una aplicación cociente, debemos demostrar que
+  $p$ es sobreyectiva, y que $topo_Y = topo' := { V subset.eq Y | p^(-1)(V) in
+  topo_X }$.
+
+  Tome $y in Y$ y note que $y = id_(Y)(y) = (p compose f)(y) = p(f(y))$. Entonces,
+  dado un elemento arbitrario $y in Y$, encontramos un elemento $x in X$ tal que
+  $y = p(x)$.
+
+  $therefore p$ es sobreyectiva.
+
+  Tome $U in topo_Y$, como $p$ es continua, $p^(-1)(U) in topo_X ==> topo_Y
+  subset.eq topo'$.
+
+  Ahora, tome $V in topo'$, entonces $p^(-1)(V) in topo_X$ por definición.
+  Entonces, $f^(-1)(p^(-1)(V)) in topo_Y$ por la continuidad de $f$. Pero
+  $f^(-1)(p^(-1)(V)) = (f^(-1) compose p^(-1))(V) = (p compose f)^(-1)(V) =
+  id_(Y)(V) = V$, lo que implica que $V in topo_Y$.
+
+  $therefore topo_Y = topo'$.
+
+  $therefore p$ es una aplicación cociente.
+
   *MEP*
 ]
