@@ -29,6 +29,43 @@
   _Considere al espacio $binsp$ con la topología discreta $disc$. \ Demuestre la
   proposición: \ El espacio topológico $(X, topo_X)$ es conexo $<==>$ No existe
   una función continua $g:(X, topo_X) -> (binsp, disc)$ que sea suprayectiva._
+
+  == Demo:
+
+  #line(length: 100%)
+  $(==>)$
+  #line(length: 100%)
+
+  Suponga que $(X, topo_X)$ es conexo. Sea $g: (X, topo_X) -> (binsp, disc)$ una
+  función continua. Afirmamos que $g$ no es suprayectiva. Note que ${0}, {1} in
+  disc$ son disjuntos con ${0} union {1} = {0, 1}$. Entonces ${{0}, {1}}$ es una
+  separación de $binsp$. Por otra parte, $g(X) sub binsp$ es imagen continua de
+  un espacio conexo. Entonces, por un teorema demostrado en clase, $g(X)$ es
+  conexo. Pero $binsp$ no es conexo, entonces $g(X) sub {0}$ o $g(X) sub {1}$
+  pero no ambos.
+
+  $therefore g$ no es suprayectiva.
+
+  #line(length: 100%)
+  $(<==)$
+  #line(length: 100%)
+
+  Demostramos el contrapositivo. Suponga que $(X, topo_X)$ no es conexo,
+  entonces existe una separación ${A, B}$. Ahora defina $g: (X, topo_X) ->
+  (binsp, disc)$ de la siguiente manera: $ g(x) := cases(
+    0 "si" x in A,
+    1 "si" x in B
+  ) $
+  Note que: \ (a) $A inter B != nothing ==> g$ está bien definida. \
+  (b) $A, B != nothing ==> g$ es suprayectiva. \
+  (c) $g^(-1)(nothing) = nothing in topo_X sp g^(-1)({0}) = A in topo_X sp
+  g^(-1)({1}) = B in topo_X sp g^(-1)({0, 1}) = X in topo_X$ \ $==> g$ es
+  continua.
+
+  $therefore$ existe una función continua $g: (X, topo_X) -> (binsp, disc)$ que
+  es suprayectiva.
+
+  *MEP*
 ]
 
 // problema 2
