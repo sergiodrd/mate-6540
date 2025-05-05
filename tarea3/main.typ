@@ -26,9 +26,10 @@
 
 // problema 1
 #prob[
-  _Considere al espacio $binsp$ con la topología discreta $disc$. \ Demuestre la
-  proposición: \ El espacio topológico $(X, topo_X)$ es conexo $<==>$ No existe
-  una función continua $g:(X, topo_X) -> (binsp, disc)$ que sea suprayectiva._
+  _Considere al espacio $binsp = {0, 1}$ con la topología discreta $disc$. \
+  Demuestre la proposición: \ El espacio topológico $(X, topo_X)$ es conexo
+  $<==>$ No existe una función continua $g:(X, topo_X) -> (binsp, disc)$ que
+  sea suprayectiva._
 
   == Demo:
 
@@ -74,6 +75,38 @@
   U sub X | X without U "es finito o" U = nothing}$ (i.e. la topología de los
   complementos finitos) \ (a) Demuestre: $(X, cof)$ es conexo. \ (b) Demuestre:
   $(X, cof)$ es compacto._
+
+  == Demo (a):
+
+  Suponga, por contradicción, que $(X, cof)$ no es conexo. Entonces, existe una
+  separación ${A, B}$ de $(X, cof)$. Como $A != nothing$ es abierto, $X without
+  A = B$ es finito. Similarmente, como $B != nothing$ es abierto, \ $X without B
+  = A$ es finito. Entonces $X = A union B$ es unión de conjuntos finitos, por lo
+  tanto $X$ es finito, lo cual contradice nuestra hipótesis. $contradiction$
+
+  *MEP*
+
+  == Demo (b):
+
+  Si $X = nothing$, entonces es compacto por convención. Suponga que
+  $X != nothing$, y sea $C := {C_alpha}_(alpha in Lambda)$ una cubierta abierta
+  de $(X, cof)$. Como $X != nothing$, la cubierta no es vacía. Tome $C_(alpha_0)
+  in C$, y note que \ $nothing != C_(alpha_0) in cof ==> A := X without
+  C_(alpha_0)$ es finito. Pero $A sub X ==> A sub arbuna C_alpha$, entonces,
+  para cada elemento $x_i in A, i in {1, ..., |A|}$, existe por lo menos algún
+  $C_(alpha_i) in C$ con $x_i in C_(alpha_i)$. \ Entonces $C' := {C_(alpha_0),
+  C_(alpha_1), ..., C_(alpha_(|A|))}$ es una subcolección finita de $C$.
+  Afirmamos que $C'$ cubre a #v(0.01cm) $X$, es decir, que
+  $limits(union.big)_(i = 0)^(|A|) C_(alpha_i) = X$. Primero, $C_(alpha_i) sub X
+  sp forall i in {0, 1, ..., |A|} ==> limits(union.big)_(i = 0)^(|A|)
+  C_(alpha_i) sub X$. Ahora tome $x in X$, si $x in C_(alpha_0) sub
+  limits(union.big)_(i = 0)^(|A|) C_(alpha_i)$, terminamos. Si $x in A = X
+  without C_(alpha_0)$, entonces $exists j in {1, ..., |A|}$ tal que $x = x_j in
+  A ==> x in C_(alpha_j) sub limits(union.big)_(i = 0)^(|A|) C_(alpha_i)$.
+
+  $therefore limits(union.big)_(i = 0)^(|A|) C_(alpha_i) = X$
+
+  *MEP*
 ]
 
 // problema 3
