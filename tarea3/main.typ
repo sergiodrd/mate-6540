@@ -39,10 +39,10 @@
 
   Suponga que $(X, topo_X)$ es conexo. Sea $g: (X, topo_X) -> (binsp, disc)$ una
   función continua. Afirmamos que $g$ no es suprayectiva. Note que ${0}, {1} in
-  disc$ son disjuntos con ${0} union {1} = {0, 1}$. Entonces ${{0}, {1}}$ es una
-  separación de $binsp$. Por otra parte, $g(X) sub binsp$ es imagen continua de
+  disc$ son disjuntos con ${0} union {1} = binsp$. Entonces ${{0}, {1}}$ es una
+  separación de $(binsp, disc)$. Por otra parte, $g(X) sub binsp$ es imagen continua de
   un espacio conexo. Entonces, por un teorema demostrado en clase, $g(X)$ es
-  conexo. Pero $binsp$ no es conexo, entonces $g(X) sub {0}$ o $g(X) sub {1}$
+  conexo. Pero $(binsp, disc)$ no es conexo, entonces $g(X) sub {0}$ o $g(X) sub {1}$
   pero no ambos.
 
   $therefore g$ no es suprayectiva.
@@ -57,7 +57,8 @@
     0 "si" x in A,
     1 "si" x in B
   ) $
-  Note que: \ (a) $A inter B != nothing ==> g$ está bien definida. \
+  Note que: \ (a) $A inter B = nothing and A union B = X==> g$ está bien
+  definida. \
   (b) $A, B != nothing ==> g$ es suprayectiva. \
   (c) $g^(-1)(nothing) = nothing in topo_X sp g^(-1)({0}) = A in topo_X sp
   g^(-1)({1}) = B in topo_X sp g^(-1)({0, 1}) = X in topo_X$ \ $==> g$ es
@@ -84,6 +85,8 @@
   = A$ es finito. Entonces $X = A union B$ es unión de conjuntos finitos, por lo
   tanto $X$ es finito, lo cual contradice nuestra hipótesis. $contradiction$
 
+  $therefore (X, cof)$ es conexo.
+
   *MEP*
 
   == Demo (b):
@@ -92,19 +95,23 @@
   $X != nothing$, y sea $C := {C_alpha}_(alpha in Lambda)$ una cubierta abierta
   de $(X, cof)$. Como $X != nothing$, la cubierta no es vacía. Tome $C_(alpha_0)
   in C$, y note que \ $nothing != C_(alpha_0) in cof ==> A := X without
-  C_(alpha_0)$ es finito. Pero $A sub X ==> A sub arbuna C_alpha$, entonces,
-  para cada elemento $x_i in A, i in {1, ..., |A|}$, existe por lo menos algún
-  $C_(alpha_i) in C$ con $x_i in C_(alpha_i)$. \ Entonces $C' := {C_(alpha_0),
-  C_(alpha_1), ..., C_(alpha_(|A|))}$ es una subcolección finita de $C$.
-  Afirmamos que $C'$ cubre a #v(0.01cm) $X$, es decir, que
-  $limits(union.big)_(i = 0)^(|A|) C_(alpha_i) = X$. Primero, $C_(alpha_i) sub X
-  sp forall i in {0, 1, ..., |A|} ==> limits(union.big)_(i = 0)^(|A|)
-  C_(alpha_i) sub X$. Ahora tome $x in X$, si $x in C_(alpha_0) sub
-  limits(union.big)_(i = 0)^(|A|) C_(alpha_i)$, terminamos. Si $x in A = X
-  without C_(alpha_0)$, entonces $exists j in {1, ..., |A|}$ tal que $x = x_j in
-  A ==> x in C_(alpha_j) sub limits(union.big)_(i = 0)^(|A|) C_(alpha_i)$.
+  C_(alpha_0)$ es finito. Pero $A sub X = arbuna C_alpha$, entonces, para cada
+  elemento $x_i in A$, con $i in {1, ..., |A|}$, existe por lo menos algún
+  $C_(alpha_i) in C$ con $x_i in C_(alpha_i)$. \
+
+  Entonces $C' := {C_(alpha_0), C_(alpha_1), ..., C_(alpha_(|A|))}$ es una
+  subcolección finita de $C$. Afirmamos que $C'$ cubre a #v(0.01cm) $X$, es
+  decir, que $limits(union.big)_(i = 0)^(|A|) C_(alpha_i) = X$. Primero,
+  $C_(alpha_i) sub X sp forall i in {0, 1, ..., |A|} ==>
+  limits(union.big)_(i = 0)^(|A|) C_(alpha_i) sub X$. Ahora tome $x in X$, si
+  $x in C_(alpha_0) sub limits(union.big)_(i = 0)^(|A|) C_(alpha_i)$,
+  terminamos. Si $x in A = X without C_(alpha_0)$, entonces $exists j in
+  {1, ..., |A|}$ tal que $x = x_j in A ==> x in C_(alpha_j) sub
+  limits(union.big)_(i = 0)^(|A|) C_(alpha_i)$.
 
   $therefore limits(union.big)_(i = 0)^(|A|) C_(alpha_i) = X$
+
+  $therefore (X, cof)$ es compacto.
 
   *MEP*
 ]
