@@ -40,6 +40,7 @@
 #let sp = $,space space$
 #let binsp = $bold(accent(2, \u{23DC}))$
 #let intA = $mono("int")(A)$
+#let intB = $mono("int")(B)$
 #let intA1 = $mono("int")(A_1)$
 #let intA2 = $mono("int")(A_2)$
 #let intA1xA2 = $mono("int")(A_1 times A_2)$
@@ -130,4 +131,61 @@
   _(i) $overline(A_1 times A_2) = overline(A_1) times overline(A_2)$._
 
   _(ii) $intA1xA2 = intA1 times intA2$._
+
+  == Proof (i):
+
+  Take $(x, y) in overline(A_1 times A_2)$, and take $U_1 in topo_1, U_2 in
+  topo_2$ such that $x in U_1$ and $y in U_2$. \ Then $(x, y) in U_1 times U_2$
+  and $U_1 times U_2 in topo_Pi$ by the definition of the product topology (for
+  finite products). But: $ (x, y) in overline(A_1 times A_2) &==> (U_1 times
+  U_2) inter (A_1 times A_2) != nothing \ &==> exists (x', y') in (U_1 times
+  U_2) inter (A_1 times A_2) \ &==> (x', y') in (U_1 inter A_1) times (U_2 inter
+  A_2) \ &==> x' in U_1 inter A_1 and y' in U_2 inter A_2 \ &==> U_1 inter A_1
+  != nothing and U_2 inter A_2 != nothing \ &==> x in overline(A_1) and y in
+  overline(A_2) \ &==> (x, y) in overline(A_1) times overline(A_2) $
+
+  $therefore overline(A_1 times A_2) sub overline(A_1) times overline(A_2)$
+
+  Similarly, take $(a, b) in overline(A_1) times overline(A_2)$, and take
+  $U_1 times U_2 in topo_Pi$ such that $(a, b) in U_1 times U_2$. \ Then $a in
+  U_1 in topo_1$ and $b in U_2 in topo_2$ by the definition of the product
+  topology (for finite products). But: $ (a, b) in overline(A_1) times
+  overline(A_2) &==> a in overline(A_1) and b in overline(A_2) \ &==> U_1 inter
+  A_1 != nothing and U_2 inter A_2 != nothing \ &==> exists a' in U_1 inter A_1
+  and exists b' in U_2 inter A_2 \ &==> (a', b') in (U_1 inter A_1) times (U_2
+  inter A_2) \ &==> (a', b') in (U_1 times U_2) inter (A_1 times A_2) \ &==>
+  (U_1 times U_2) inter (A_1 times A_2) != nothing \ &==> (a, b) in
+  overline(A_1 times A_2) $
+
+  $therefore overline(A_1) times overline(A_2) sub overline(A_1 times A_2)$
+
+  $therefore overline(A_1 times A_2) = overline(A_1) times overline(A_2)$
+
+  *MEP*
+
+  == Proof (ii):
+
+  Note that, for any subset $B$ of a topological space $(Y, topo_Y)$, we have
+  that \ $z in intB <==> exists U in topo_Y$ such that $z in U sub B$. Here's a
+  brief proof: \ Take $z in intB = union.big {V in topo_Y | V sub B} sub B$.
+  This proves ($==>$). Now suppose $exists U in topo_Y$ such that $z in U sub
+  B$, then $U in union.big {V in topo_Y | V sub B} = intB$. This proves ($<==$).
+
+  Now for the main proof. Take $(x, y) in intA1xA2$, then $exists U_1 times U_2
+  in topo_Pi$ such that \ $(x, y) in U_1 times U_2 sub A_1 times A_2 ==> x in
+  U_1 sub A_1$ and $y in U_2 sub A_2 ==> x in intA1$ and \ $y in intA2$. Then
+  $(x, y) in intA1 times intA2$.
+
+  $therefore intA1xA2 sub intA1 times intA2$.
+
+  Now take $(a, b) in intA1 times intA2$, then $a in intA1$ and $b in intA2 ==>
+  exists U_1 in topo_1$ such that $a in U_1 sub A_1$ and $exists U_2 in topo_2$
+  such that $b in U_2 sub A_2$. Then $(a, b) in U_1 times U_2 sub A_1 times
+  A_2$, which implies that $(a, b) in intA1xA2$.
+
+  $therefore intA1 times intA2 sub intA1xA2$.
+
+  $therefore intA1xA2 = intA1 times intA2$.
+
+  *MEP*
 ]
