@@ -15,12 +15,26 @@
 #let topo = $cal(T)$
 #let disc = $topo_"disc"$
 #let cof = $topo_"cof"$
+#let eucl = $topo_(epsilon^1)$
+#let eucl2 = $topo_(epsilon^2)$
+#let euclsp = $(RR, topo_(epsilon^1))$
+#let eucl2sp = $(RR^2, topo_(epsilon^2))$
 #let base = $cal(B)$
 #let case = $cal(C)$
+#let arbfama = ${U_alpha}_(alpha in Lambda)$
+#let finfamn = ${U_i}_(i = 1)^n$
 #let arbuna = $limits(union.big)_(alpha in Lambda)$
 #let arbung = $limits(union.big)_(gamma in Lambda')$
+#let arbungG = $limits(union.big)_(gamma in Gamma)$
+#let tilgam = $tilde(gamma)$
+#let tilGam = $tilde(Gamma)$
+#let tilj = $tilde(j)$
+#let tilSig = $tilde(Sigma)$
+#let arbungtilG = $limits(union.big)_(tilgam in tilGam)$
 #let arbina = $limits(inter.big)_(alpha in Lambda)$
 #let arbing = $limits(inter.big)_(gamma in Lambda')$
+#let arbingG = $limits(inter.big)_(gamma in Gamma)$
+#let arbingtilG = $limits(inter.big)_(tilgam in tilGam)$
 #let sp = $,space space$
 #let binsp = $bold(accent(2, \u{23DC}))$
 
@@ -118,12 +132,78 @@
 
 // problema 3
 #prob[
-  _Dé ejemplos de subespacios $A$ y $B$ de $(RR^2, topo_(epsilon^2))$ tales
-  que: \ (a) $A$ y $B$ son conexos, pero $A inter B$ no es conexo. \
+  _Dé ejemplos de subespacios $A$ y $B$ de $eucl2sp$ tales que: \ (a) $A$ y $B$
+  son conexos, pero $A inter B$ no es conexo. \
   (b) $A$ y $B$ no son conexos, pero $A union B$ es conexo. \
   (c) $A$ y $B$ son conexos pero $A without B$ no es conexo. \
   (d) $A$ y $B$ son conexos y $overline(A) inter overline(B) != nothing$, pero
   $A union B$ no es conexo._
+
+  == Lema 1:
+
+  Sea $X$ un subespacio conexo de $euclsp$, y $f: X -> euclsp$ una
+  función continua. Entones, el conjunto ${ (x, f(x)) in RR^2 | x in X }$ es un
+  subespacio conexo de $eucl2sp$.
+
+  === Demo:
+
+  Sea $phi: X -> eucl2sp$ una función definida por $phi(x) = (x, f(x))$.
+  Tome $V in eucl2$, entonces $phi^(-1)(V) = {x in X | (x, f(x)) in V}$. Tome
+  $y in phi^(-1)(V)$, entonces $(y, f(y)) in V$, pero $V in eucl2 ==> exists
+  r in (0, infinity)$ tal que $B_(d_2)((y, f(y)); r) sub V$. Donde $d_2$ es la
+  métrica usual sobre $RR^2$. Entonces: $ f^(-1)(B_(d_2)((y, f(y)); r)) &=
+  {x in X | d_2((x, f(x)), (y, f(y)) < r} \ &= {x in X | sqrt((y - x)^2 +
+    (f(y) - f(x))^2) < r} \ &= {x in X | abs(y - x) < r}
+  "(porque estamos tomando una proyección)" \ &= {x in X | d_1(x, y) < r}
+  "donde" d_1 "es la métrica usual sobre" RR \ &= B_(d_1)(y; r) in eucl $
+  Pero $B_(d_1)(y; r) = f^(-1)(B_(d_2)((y, f(y); r))) sub f^(-1)(V)$.
+
+  $therefore phi$ es continua.
+
+  Pero, por el corolario 4.8, $X$ conexo y $phi$ continua $==> phi(X) =
+  {(x, f(x)) in RR^2 | x in X}$ es un subespacio conexo de $eucl2sp$.
+
+  *MEP*
+
+  == Ejemplo (a):
+
+  Sean $f_1, g_1: ([-1, 1], topo_"rel") -> euclsp$ definidas por $f(x) = x^2,
+  g(x) = 1/2$. Note que $f_1, g_1$ son continuas y que $[-1, 1]$ es conexo.
+  Entonces, por el lema 1, \ $A := {(x, f(x)) in RR^2 | x in [-1, 1]}, B := {
+  (x, g(x)) in RR^2 | x in [-1, 1]}$ son subespacios conexos de $RR^2$. Pero
+  note que $A inter B = {(-1/sqrt(2), 1/2), (1/sqrt(2), 1/2)}$, y
+  ${{(-1/sqrt(2), 1/2)}, {(1/sqrt(2), 1/2)}}$ sirve de separación para $A inter
+  B$.
+
+  $therefore A inter B$ no es conexo.
+
+  == Ejemplo (b):
+
+  Sea $A := [0, 1/4] union.sq [1/2, 3/4]$ y sea $B := [1/4, 1/2] union.sq
+  [3/4, 1]$. Note que ambos $A$ y $B$ no son conexos, pues están definidos como
+  uniones disjuntas de dos subespacios propios. Ahora, note que:
+  $ A union B &= ([0, 1/4] union.sq [1/2, 3/4]) union ([1/4, 1/2] union.sq
+  [3/4, 1]) \ &= ([0, 1/4] union [1/4, 1/2]) union ([1/2, 3/4] union [3/4, 1]) \
+  &= [0, 1/2] union [1/2, 1] = [0, 1] $ $therefore A union B = [0, 1]$ es
+  conexo.
+
+  == Ejemplo (c):
+
+  Sea $A := [0, 1]$ y sea $B := [1/4, 3/4]$. Ambos son conexos pues son
+  intervalos. \ Pero $A without B = [0, 1] without [1/4, 3/4] = [0, 1/4) union.sq
+  (3/4, 1]$, pero esto es la unión disjunta de dos subespacios propios.
+
+  $therefore A without B$ no es conexo.
+
+  == Ejemplo (d):
+
+  Sea $A := [0, 1/2)$ y sea $B := (1/2, 1]$. Note que ambos son conexos pues son
+  intervalos, además note que $overline(A) = [0, 1/2]$ y $overline(B) =
+  [1/2, 1]$. Entonces $overline(A) inter overline(B) = {1/2} != nothing$. Pero
+  $A union B = [0, 1/2) union.sq (1/2, 1]$, que es una unión disjunta de
+  subespacios propios.
+
+  $therefore A union B$ no es conexo.
 ]
 
 // problema 4
