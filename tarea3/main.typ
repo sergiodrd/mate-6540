@@ -35,6 +35,7 @@
 #let arbing = $limits(inter.big)_(gamma in Lambda')$
 #let arbingG = $limits(inter.big)_(gamma in Gamma)$
 #let arbingtilG = $limits(inter.big)_(tilgam in tilGam)$
+#let arbcovera = ${C_alpha}_(alpha in Lambda)$
 #let sp = $,space space$
 #let binsp = $bold(accent(2, \u{23DC}))$
 
@@ -328,4 +329,23 @@
   $topo_infinity = {U sub Y | U in topo_X " o " Y without U
   "es compacto y cerrado en" X}$. \ (c) Demuestre que $(Y, topo_infinity)$ es
   compacto.
+
+  == Demo:
+
+  Sea $arbcovera sub topo_X$ una cubierta abierta para $Y$. Como $infinity in
+  Y$, debe existir algún $C_infinity in arbcovera$ tal que $infinity in
+  C_infinity$. Entonces $C_infinity subset.eq.not X$, lo que implica que
+  $C_infinity in.not topo_X$, pero $C_infinity in topo_infinity$, por lo tanto,
+  \ $Y without C_infinity$ es cerrado y compacto en $X$. Note que $Y without
+  C_infinity sub X$, entonces \ $C := {C_alpha inter (Y without C_infinity) |
+  alpha in Lambda}$ es una cubierta abierta para $Y without C_infinity$. Pero
+  $Y without C_infinity$ es compacto, lo que implica que existe una subcolección
+  finita ${C_(alpha_i) inter (Y without C_infinity) | alpha_i in Lambda sp
+  forall i in {1, ..., n}} sub C$ que es cubierta abierta de $Y without
+  C_infinity$. Ahora sea $F := {C_(alpha_1), ..., C_(alpha_n), C_infinity}$.
+  Note que $F$ es una subcolección finita de $arbcovera$ que cubre a todo $Y$.
+
+  $therefore (Y, topo_infinity)$ es compacto.
+
+  *MEP*
 ]
