@@ -215,6 +215,24 @@
   topología sobre $Y$. \ (b) Sea $topo'$ la topología relativa sobre $X$, la que
   hereda como subconjunto de $Y$. Demuestre que $topo' = topo_X$.
 
+  == Lema 2:
+
+  Sea $U in topo_infinity$. Si $Y without U$ es cerrado en $X$, entonces
+  $(U without {infinity}) in topo_X$.
+
+  == Demo:
+
+  Sea $U in topo_infinity$ tal que $Y without U$ es cerrado en $X$, entonces
+  $(Y without U) sub X$. Esto implica que $infinity in.not (Y without U)$.
+  Entonces: $ Y without U = (Y without U) without {infinity} = (Y without
+  {infinity}) without (U without {infinity}) = X without (U without
+  {infinity}) $ Pero $X without (U without {infinity}) = Y without U$ es
+  cerrado en $X$.
+
+  $therefore (U without infinity) in topo_X$.
+
+  *MEP*
+
   == Demo (a):
 
   Note que $nothing in topo_X ==> nothing in topo_infinity$. Además, $nothing$
@@ -282,6 +300,25 @@
   infinity in.not U$, entonces $U inter V = U inter (V without {infinity})$,
   pero ambos conjuntos siendo intersecados son abiertos en X, por lo tanto
   $U inter V in topo_X ==> U inter V in topo_infinity$.
+
+  == Demo (b):
+
+  Tome $U' in topo'$, entonces $exists U in topo_infinity$ tal que $U' = X inter
+  U$. Si $U in topo_X$, entonces $U sub X$ \ $==> U' = X inter U = U in topo_X$.
+  Si $U$ es tal que $Y without U$ es cerrado y compacto en $X$, entonces \
+  $(U without {infinity}) in topo_X$ por el lema 2. Esto implica que $U' = X
+  inter U = (U without {infinity}) in topo_X$.
+
+  $therefore topo' sub topo_X$.
+
+  Tome $U in topo_X$, entonces $U in topo_infinity$, pero $U sub X ==> U =
+  (X inter U) in topo'$.
+
+  $therefore topo_X sub topo'$.
+
+  $therefore topo' = topo_X$.
+
+  *MEP*
 ]
 
 // problema 5
