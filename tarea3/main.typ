@@ -214,6 +214,74 @@
   "es compacto y cerrado en" X}$. \ (a) Demuestre que $topo_infinity$ es una
   topología sobre $Y$. \ (b) Sea $topo'$ la topología relativa sobre $X$, la que
   hereda como subconjunto de $Y$. Demuestre que $topo' = topo_X$.
+
+  == Demo (a):
+
+  Note que $nothing in topo_X ==> nothing in topo_infinity$. Además, $nothing$
+  es cerrado y compacto en $X$, pero $nothing = Y without Y$ \ $==> Y in
+  topo_infinity$.
+
+  $therefore nothing, Y in topo_infinity$.
+
+  Sea $arbfama sub topo_infinity$ una familia arbitraria de abiertos y sea
+  $Gamma sub Lambda$ tal que $U_gamma in topo_X <==> gamma in Gamma$. Entonces
+  sea $tilGam = Lambda without Gamma$ y note que $Y without U_tilgam$ es cerrado
+  y compacto en $X <==> tilgam in tilGam$. \ Sea $U = arbuna U_alpha = arbungG
+  U_gamma union arbungtilG U_tilgam$. Llame $A := arbungG U_gamma$ y $B :=
+  arbungtilG U_tilgam ==> U = A union B$. Afirmamos que $U in topo_infinity$.
+  Note que $U_gamma in topo_X sp forall gamma in Gamma ==> arbungG U_gamma = A
+  in topo_X$, pues $topo_X$ es una topología. Entonces $A in topo_infinity$.
+  Esto nos dice que si $tilGam = nothing$, entonces $U in topo_infinity$. \
+  Ahora, note que $Y without B = Y without arbungtilG U_tilgam = arbingtilG
+  (Y without U_tilgam)$, pero la intersección arbitraria de conjuntos cerrados
+  es cerrada, y la intersección arbitraria de conjuntos compactos es compacta
+  (suponga que no lo es, entonces existe una cubierta abierta de la intersección
+  que no tiene una subcubierta abierta finita, esto nos produce una
+  contradicción si extendemos esta cubierta a uno de los conjuntos siendo
+  intersecados). Entonces $B in topo_infinity$. Esto nos dice que si $Gamma =
+  nothing$, entonces $U in topo_infinity$. Para el último caso, suponga que
+  $Gamma, tilGam != nothing$. Entonces:
+  $ Y without U &= Y without (A union B) = (Y without A) inter (Y without B) \
+  &= (Y without arbungG U_gamma) inter (Y without arbungtilG U_tilgam) \
+  &= arbingG (Y without U_gamma) inter arbingtilG (Y without U_tilgam). $
+  Llame $C := arbingG (Y without U_gamma)$ y $D := arbingtilG (Y without
+  U_tilgam) ==> Y without U = C inter D$. Note que $D$ es cerrado y compacto por
+  un argumento anterior. Además, $C$ es cerrado, pues es intersección arbitraria
+  de cerrados, lo que implica que $Y without U$ es cerrado. También, $Y without
+  U = C inter D sub D$, pero cualquier subconjunto cerrado de un compacto
+  también es compacto por un teorema demostrado en clase. Entonces $Y without U$
+  es compacto.
+
+  $therefore U in topo_infinity$.
+
+  Sean $U, V in topo_infinity$. Si ambos $U, V in topo_X$, entonces $U inter V
+  in topo_X ==> U inter V in topo_infinity$. Si ambos $U$ y $V$ son tales que
+  $Y without U, Y without V$ son cerrados y compactos en $X$, entonces: \
+  $Y without (U inter V) = (Y without U) union (Y without V)$, pero la unión
+  finita de cerrados es cerrada. Además, tome una cubierta abierta
+  ${C_alpha}_(alpha in Lambda)$ de $(Y without U) union (Y without V)$, entonces
+  ${C_alpha inter (Y without U)}_(alpha in Lambda)$ es una cubierta abierta para
+  $Y without U$, y ${C_alpha inter (Y without V)}_(alpha in Lambda)$ es una
+  cubierta abierta para $Y without V$. Pero estos son ambos compactos, entonces
+  debe existir una subcubierta finita ${D_i}_(i = 1)^n sub {C_alpha inter
+  (Y without U)}_(alpha in Lambda)$ y una subcubierta finita ${D'_j}_(j = 1)^m
+  sub {C_alpha inter (Y without V)}_(alpha in Lambda)$. Entonces
+  ${D_i}_(i = 1)^n union {D'_j}_(j = 1)^m$ es una subcolección finita de
+  ${C_alpha}_(alpha in Lambda)$ que cubre a $(Y without U) union (Y without V)
+  = Y without (U inter V)$. Entonces, \ $Y without (U inter V)$ es cerrado y
+  compacto en $X ==> U inter V in topo_infinity$. Para el último caso, suponga
+  que uno de los $U, V$ es abierto en $X$ y que el complemento en $Y$ del otro
+  es cerrado y compacto en $X$. Suponga, sin pérdida de generalidad, que $U, V$
+  son tal que $U in topo_X$ y $Y without V$ es cerrado y compacto en $X$.
+  Note que $Y without V$ cerrado y compacto en $X ==> Y without V sub X ==>
+  infinity in.not Y without V$. Entonces: \
+  $Y without V = (Y without V) without {infinity} = (Y without {infinity})
+  without (V without {infinity}) = X without (V without {infinity})$. Pero $X
+  without (V without {infinity}) = Y without V$ es cerrado en $X$, entonces
+  $V without {infinity} in topo_X$. Ahora, note que $U in topo_X ==> U sub X ==>
+  infinity in.not U$, entonces $U inter V = U inter (V without {infinity})$,
+  pero ambos conjuntos siendo intersecados son abiertos en X, por lo tanto
+  $U inter V in topo_X ==> U inter V in topo_infinity$.
 ]
 
 // problema 5
