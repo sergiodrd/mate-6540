@@ -243,6 +243,26 @@
   function, where $(X, topo_X)$ is connected. Show that if $a, b$ are two points
   in $X$ and if $r$ is a real number lying between $f(a)$ and $f(b)$, then there
   is a $c in X$ such that $f(c) = r$._
+
+  == Proof:
+
+  Note that $f^(-1)(RR) = X$. Now, suppose, by contradiction, that $exists.not
+  c in X$ such that $f(c) = d$. Then the previous equation still holds when
+  you remove $d$ from $RR$. That is: $ f^(-1)(RR without {d}) =
+  f^(-1)((-infinity, d) union (d, +infinity)) = X $ Now, let $A :=
+  f^(-1)((-infinity, d))$, and $B := f^(-1)((d, +infinity))$, and note that:
+  $ &"(i)    " &&a in A &&==> A != nothing and b in B ==> B != nothing \
+  &"(ii)    " &&A union B &&= f^(-1)((-infinity, d)) union f^(-1)((d,
+  +infinity)) \ &&&&&= f^(-1)((-infinity, d) union (d, +infinity)) = X \
+  &"(iii)    " &&A inter B &&= f^(-1)((-infinity, d)) inter f^(-1)((d,
+  +infinity)) \ &&&&&= f^(-1)((-infinity, d) inter (d, +infinity)) =
+  f^(-1)(nothing) = nothing $
+  Then ${A, B}$ forms a separation for $X$, which is a contradiction.
+  $contradiction$
+
+  $therefore exists c in RR$ such that $f(c) = d$.
+
+  *MEP*
 ]
 
 // problema 7
