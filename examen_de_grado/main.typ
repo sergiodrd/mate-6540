@@ -235,6 +235,22 @@
   _(a) Show that, if $A$ or $B$ is open, then $C$ is open._
 
   _(b) Show that, if $A$ and $B$ are compact, then $C$ is compact._
+
+  == Proof (a):
+
+  Suppose, without loss of generality, that $A in eucl$. Now take $(x + y) in
+  C$, then $x in A$, which is open, so $exists delta in (0, infinity)$ such that
+  $(x - delta, x + delta) sub A$.
+
+  We claim that $D := ((x + y) - delta, (x + y) + delta) sub C$.
+
+  Take $d in D$, then: $ &(x + y) - delta < d < (x + y) + delta \ ==> &x - delta
+  < d - y < x + delta \ ==> &(d - y) in (x - delta, x + delta) sub A \ ==>
+  &((d - y) + y) in C \ ==> &d in C $ $therefore D sub C$
+
+  $therefore C$ is open.
+
+  *MEP*
 ]
 
 // problema 6
