@@ -56,6 +56,44 @@
 
   _(ii) Show that if $(Y, topo_Y)$ is compact, then $(Y, topo_Y)$ is
   pseudocompact, but that the converse does not hold._
+
+  == Proof (i):
+
+  Let $(X, topo_x)$ be a pseudocompact topological space, and let $phi: (X,
+  topo_X) -> (phi(X), topo_phi(X))$ be a continuous function. Now let $f:
+  (phi(X), topo_phi(X)) -> euclsp$ be a continuous funcion. Then \ $(f compose
+  phi): (X, topo_X) -> euclsp$ is continuous. But $(X, topo_X)$ is
+  pseudocompact, so $f compose phi$ is bounded \ $==> f$ is bounded. Then
+  $(phi(X), topo_phi(X))$ is pseudocompact.
+
+  $therefore$ pseudocompactness is a continuous invariant.
+
+  *MEP*
+
+  == Proof (ii):
+
+  We claim that $(Y, topo_Y)$ compact $==> (Y, topo_Y)$ pseudocompact, we show
+  the contrapositive.
+
+  Suppose that $(Y, topo_Y)$ is not pseudocompact, then there exists a
+  continuous function \ $f: (Y, topo_Y) -> euclsp$ that is unbounded. Then
+  $f(Y)$ extends infinitely in at least one direction. Suppose, without loss of
+  generality, that it extends infinitely to the right. Then $f(Y) sub
+  (a, +infinity)$, for some $a in RR union {-infinity}$. Now define the family
+  ${(a, i)}_(n = 1)^infinity$ and note that: \ $countun (a, i) = (a, +infinity)
+  supset.eq f(Y)$. But note that $(a, i) in eucl, forall i in NN ==>
+  f^(-1)((a, i)) in topo_Y, forall i in NN$ because $f$ is continuous. And:
+  $ countun f^(-1)((a, i)) = f^(-1)(countun (a, i)) = f^(-1)((a, +infinity))
+  supset.eq f^(-1)(f(Y)) supset.eq Y $ This implies that the collection
+  $C := {f^(-1)((a, i)) inter Y | i in NN}$ is an open cover for $Y$, but note
+  that, for any finite subcollection $C' := {f^(-1)((a, i_j)) | i_j in NN sp
+  forall j in {1, ..., n}} sub C$, there exists a natural number $n$ such that
+  $i_n$ is an upper bound of $C'$. But $f(Y)$ extends infinitely to the right,
+  so $C'$ cannot be an open cover for $Y$.
+
+  $therefore (Y, topo_Y)$ is not compact.
+
+  Now we show that the converse does not hold.
 ]
 
 // problema 2
