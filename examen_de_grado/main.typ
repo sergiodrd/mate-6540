@@ -112,6 +112,45 @@
   _Show that the collection $topo = {X without c(A) | A in powerX}$ is a
   topology over $X$, and that in this topology $overline(A) = c(A) sp forall A
   in powerX$. Here $overline(A)$ is the closure of $A$ in $(X, topo)$._
+
+  == Proof:
+
+  #line(length: 100%)
+  We claim that $nothing, X in topo$.
+  #line(length: 100%)
+
+  Note that $c(X) in powerX$ and $X in c(X)$ imply that $c(X) = X$. Then $X
+  without c(X) = X without X = nothing in topo$. Similarly, note that
+  $c(nothing) = nothing ==> X without c(nothing) = X without nothing = X in
+  topo$.
+
+  $therefore nothing, X in topo$.
+
+  #line(length: 100%)
+  We claim that $topo$ is closed under arbitrary unions.
+  #line(length: 100%)
+
+  Take $arbfama sub topo_X$. We show that $U := arbuna U_alpha in topo_X$. Note
+  that $forall alpha in Lambda, exists V_alpha in powerX$ such that $U_alpha =
+  X without c(V_alpha)$. Then $U = arbuna (X without c(V_alpha)) = X without
+  arbina c(V_alpha)$
+
+  #line(length: 100%)
+  We claim that $topo$ is closed under finite intersections.
+  #line(length: 100%)
+
+  Take $U, V in topo$, then $exists A, B in powerX$ such that $U = X without
+  c(A)$ and $V = X without c(B)$. Then:
+  $ U inter V &= (X without c(A)) inter (X without c(B)) \
+  &= X without (c(A) union c(B)) \ &= X without c(A union B) in topo $
+
+  $therefore U inter V in topo$.
+
+  $therefore topo$ is closed under finite intersections, by induction.
+
+  #line(length: 100%)
+  We claim that $overline(A) = c(A) sp forall A in powerX$.
+  #line(length: 100%)
 ]
 
 // problema 3
@@ -126,6 +165,52 @@
   _(iii) $X without overline((X without overline(A))) = nothing$._
 
   _(iv) $A sub overline((X without overline(A)))$._
+
+  == Proof:
+
+  #line(length: 100%)
+  _((i) $==>$ (ii))_
+  #line(length: 100%)
+
+  Suppose that $intclA = union.big {U in topo_X | U sub overline(A)} = nothing$.
+  Note that $overline((X without overline(A))) sub X$. We claim that \
+  $X sub overline((X without overline(A)))$. Take $x in X$ and $U in topo_X$
+  such that $x in U$. Then $U != nothing$. Now suppose that $U sub overline(A)$,
+  then $U sub union.big {U in topo_X | U sub overline(A)} = nothing ==> U =
+  nothing$, which is a contradiction. $contradiction$ \ #v(.01mm) Then $U inter
+  (X without overline(A)) != nothing ==> x in overline((X without overline(A)))
+  ==> X sub overline((X without overline(A)))$.
+
+  $therefore overline((X without overline(A))) = X$.
+
+  $therefore X without overline(A)$ is dense in $X$.
+
+  #line(length: 100%)
+  _((ii) $==>$ (iii))_
+  #line(length: 100%)
+
+  Suppose that $X without overline(A)$ is dense in $X$, then $overline((X
+  without overline(A))) = X$ by definition. \ Then $X without overline((X
+  without overline(A))) = X without X = nothing$.
+
+  $therefore X without overline((X without overline(A))) = nothing$.
+
+  #line(length: 100%)
+  _((iii) $==>$ (iv))_
+  #line(length: 100%)
+
+  Suppose that $X without overline((X without overline(A))) = nothing$. Then
+  $overline((X without overline(A))) = X$. But $A sub X$ by hypothesis.
+
+  $therefore A sub overline((X without overline(A)))$
+
+  #line(length: 100%)
+  _((iv) $==>$ (i))_
+  #line(length: 100%)
+
+  Suppose that $A sub overline((X without overline(A)))$. Take $x in A$, then
+  $x in overline((X without overline(A)))$. Now take $U in topo_X$ with $x in
+  U$, then $U inter (X without overline(A)) != nothing ==> U sub$
 ]
 
 // problema 4
