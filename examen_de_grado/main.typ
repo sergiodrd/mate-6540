@@ -132,6 +132,24 @@
 
   _(ii) $intA1xA2 = intA1 times intA2$._
 
+  == Lemma 1:
+
+  Let $C_1, C_2, D_1, D_2$ be sets. Then $(C_1 times C_2) inter (D_1 times D_2)
+  = (C_1 inter D_1) times (C_2 inter D_2)$.
+
+  == Proof:
+
+  Note that:
+  $ &(x, y) in (C_1 times C_2) inter (D_1 times D_2) \
+  <==> &(x, y) in (C_1 times C_2) and (x, y) in (D_1 times D_2) \
+  <==> &(x in C_1 and y in C_2) and (x in D_1 and y in D_2) \
+  <==> &(x in C_1 and x in D_1) and (y in C_2 and y in D_2) \
+  <==> &x in (C_1 inter D_1) and y in (C_2 inter D_2) \
+  <==> &(x, y) in (C_1 inter D_1) times (C_2 inter D_2) $
+
+  $therefore (C_1 times C_2) inter (D_1 times D_2) = (C_1 inter D_1) times
+  (C_2 inter D_2)$
+
   == Proof (i):
 
   Take $(x, y) in overline(A_1 times A_2)$, and take $U_1 in topo_1, U_2 in
