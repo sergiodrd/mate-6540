@@ -94,6 +94,30 @@
   $therefore (Y, topo_Y)$ is not compact.
 
   Now we show that the converse does not hold.
+
+  Consider the collection: $topo := {U sub RR | U = nothing or 0 in U}$.
+  Note that $nothing in topo$ by construction and \ $0 in RR ==> RR in topo$,
+  and that arbitrary unions and finite intersections of sets containing $0$ also
+  contain $0$. Then $topo$ is a topology over $RR$. Suppose $f: (RR, topo) ->
+  euclsp$ is a continuous function. Then, since $RR without {f(0)} = (-infinity,
+  0) union (0, +infinity) in eucl$, we have that $A := f^(-1)(RR without f({0}))
+  in topo$. But note that $A = f^(-1)(RR without f({0})) = f^(-1)(RR) without
+  f^(-1)(f({0})) = RR without f^(-1)(f({0}))$, and \ ${0} sub f^(-1)(f({0}))$,
+  it then follows that $0 in.not A$, but $A in topo$, therefore $A =
+  f^(-1)(RR without f({0})) = nothing$. This implies that $f$ doesn't ever map
+  to anything other than $0$, so $f(x) = 0$, which is a bounded function.
+
+  $therefore (RR, topo)$ is pseudocompact.
+
+  Consider the collection $D := {(-i, i) | i in NN}$. Note that $forall i in NN
+  sp 0 in (-i, i) ==> (-i, i) in topo$. Also, $countun (-i, i) = RR$. Therefore,
+  $D$ is an open cover for $RR$. Now take a finite subcollection \ $D' :=
+  {(-i_j, i_j) | i_j in NN sp forall j in {1, ..., n}} sub D$. But clearly
+  $D'$ does not cover $RR$.
+
+  $therefore (RR, topo)$ is not compact.
+
+  *MEP*
 ]
 
 // problema 2
@@ -225,6 +249,8 @@
 
   _(ii) Show that every closed set in a metric space $(X, d)$ is a
   $G_delta$-set._
+
+  == Proof (i):
 ]
 
 // problema 5
