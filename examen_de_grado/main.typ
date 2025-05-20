@@ -139,6 +139,9 @@
 
   == Proof:
 
+  This proof is incomplete, but I left what I tried here as a little extra.
+  My chosen 5 problems do not include this one :).
+
   #line(length: 100%)
   We claim that $nothing, X in topo$.
   #line(length: 100%)
@@ -149,15 +152,6 @@
   topo$.
 
   $therefore nothing, X in topo$.
-
-  #line(length: 100%)
-  We claim that $topo$ is closed under arbitrary unions.
-  #line(length: 100%)
-
-  Take $arbfama sub topo_X$. We show that $U := arbuna U_alpha in topo_X$. Note
-  that $forall alpha in Lambda, exists V_alpha in powerX$ such that $U_alpha =
-  X without c(V_alpha)$. Then $U = arbuna (X without c(V_alpha)) = X without
-  arbina c(V_alpha)$
 
   #line(length: 100%)
   We claim that $topo$ is closed under finite intersections.
@@ -171,10 +165,6 @@
   $therefore U inter V in topo$.
 
   $therefore topo$ is closed under finite intersections, by induction.
-
-  #line(length: 100%)
-  We claim that $overline(A) = c(A) sp forall A in powerX$.
-  #line(length: 100%)
 ]
 
 // problema 3
