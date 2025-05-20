@@ -232,9 +232,18 @@
   _((iv) $==>$ (i))_
   #line(length: 100%)
 
-  Suppose that $A sub overline((X without overline(A)))$. Take $x in A$, then
-  $x in overline((X without overline(A)))$. Now take $U in topo_X$ with $x in
-  U$, then $U inter (X without overline(A)) != nothing ==> U sub$
+  Suppose that $A sub overline((X without overline(A)))$. Now suppose, by
+  contradiction, that $intclA != nothing$. Then \ $exists x in intclA ==>
+  exists U in topo_X$ such that $x in U sub overline(A)$. But $x in overline(A)$
+  and $U$ neighborhood of $x$ imply that $U inter A != nothing$. So $exists y
+  in U$ such that $y in A sub overline((X without overline(A)))$. But now $y in
+  overline((X without overline(A)))$ and $U$ neighborhood of $y$ imply that
+  $U inter (X without overline(A)) != nothing$. But this contradics the fact
+  that $U in overline(A)$. $contradiction$
+
+  $therefore intclA = nothing$.
+
+  *MEP*
 ]
 
 // problema 4
