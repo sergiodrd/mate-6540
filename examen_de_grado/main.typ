@@ -258,8 +258,6 @@
 
   _(ii) Show that every closed set in a metric space $(X, d)$ is a
   $G_delta$-set._
-
-  == Proof (i):
 ]
 
 // problema 5
@@ -284,6 +282,21 @@
   &((d - y) + y) in C \ ==> &d in C $ $therefore D sub C$
 
   $therefore C$ is open.
+
+  *MEP*
+
+  == Proof (b):
+
+  Suppose that $A, B$ are compact. Then, by Tychonoff's Theorem, $A times B$ is
+  compact when given the product topology. Note that the product topology
+  $topo_(A times B)$ is a relative topology inherited from $RR^2$. Define a
+  function $phi: (A times B, topo_(A times B)) -> euclsp$ by $phi(a, b) =
+  a + b$. Note that this is a polynomial function, and thus continuous.
+  Also note that: $ phi(A times B) = {phi(a, b) | (a, b) in A times B} =
+  {a + b | a in A and b in B} = C $
+  But $A times B$ is compact and compactness is a continuous invariant.
+
+  $therefore C$ is compact.
 
   *MEP*
 ]
